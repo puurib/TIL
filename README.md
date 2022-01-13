@@ -5,4 +5,4 @@
 * [Markdown 사용법](https://github.com/puurib/TIL/blob/master/Markdown/Markdown.md)
 
 ## Git
-* [Git 내용 정리]
+* [Git 내용 정리](https://github.com/puurib/TIL/blob/master/Git/Git.md)
