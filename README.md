@@ -17,7 +17,7 @@
 
 ## Linux
 
-* 
+* [Linuk 용어](https://github.com/puurib/TIL/blob/master/Linux/Linux%20%EC%9A%A9%EC%96%B4.md)
 
 
 
