@@ -42,10 +42,16 @@
 
 
 
+## Python PJT
+
+
+
 
 
 ## Jupyter notebook
 * [Jupyter notebook 사용법](https://github.com/puurib/TIL/blob/master/Jupyter%20notebook/Jupyter%20notebook.md)
+
+
 
 
 
