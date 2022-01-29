@@ -9,7 +9,7 @@
 ## CS
 * [CS 용어](https://github.com/puurib/TIL/blob/master/CS/CS.md)
 
-* dddd
+* ddddDDD
 
 * 
 
