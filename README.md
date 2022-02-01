@@ -50,6 +50,10 @@
 
 * [Python]
 
+* 과목평가 정리
+
+
+
 
 
 ## Jupyter notebook
