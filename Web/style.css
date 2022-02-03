@@ -1,0 +1,19 @@
+h1{
+  color:aquamarine;
+  font-size: 200px;
+}
+.my_class{
+  color: red;
+}
+
+
+#my_id{
+  color: blue;
+}
+
+div > p {
+
+  color: red;
+
+}
+
