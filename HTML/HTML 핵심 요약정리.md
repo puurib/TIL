@@ -157,7 +157,33 @@
 
 
 
----
+### Display (속성 세가지 : 블럭, 인라인, 인라인-블럭, none)
+
+#### 1. 블럭
+
+header, footer, div, h1
+
+
+
+#### 2. 인라인
+
+span, a, img
+
+
+
+#### 3. display: none vs visibility: hidden (둘 다 화면에서 안보임)
+
+* display: none 
+
+* visibility: hidden: 자리는 차지하는데 우리 눈에는 보이지는 않는 것
+
+
+
+#### 4. box model (content padding border margin)
+
+
+
+
 
 # HTML 실습 코드
 
