@@ -1,0 +1,20 @@
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: aqua;
+  float: left;
+  margin: 20px;
+}
+
+.box2 {
+  width: 700px;
+  height: 100px;
+  background-color: rgb(63, 196, 23);
+  clear: left;
+  text-align: center;
+}
+
+#boxjump {
+  clear: left;
+  
+}
