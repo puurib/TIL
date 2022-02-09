@@ -368,8 +368,9 @@ space-evenly
 #### align-content
 
 * flex-wrap이 nowrap이면 align-content를 주는 의미가 없어짐. (상충됨.)
-  * flex-wrap은 모든 아이템을 1줄로 만들고 싶어하는데 align-content은 2줄이상일 때 사용하니깐
-
+  
+* flex-wrap은 모든 아이템을 1줄로 만들고 싶어하는데 align-content은 2줄이상일 때 사용하니깐
+  
 * stretch : 아이템을 꽉꽉 늘림.. (align-content의 기본값)
 
   flex-start
@@ -545,3 +546,14 @@ ctrl alt 방향키
 
 커서 놓고 alt + 방향키
 
+
+
+
+
+# workshop3-2
+
+![image-20220209001834671](HTML%20%EC%A0%95%EB%A6%AC%20%EC%88%98%EC%97%85(%EB%81%84%EC%A0%81).assets/image-20220209001834671.png)
+
+![image-20220209002008701](HTML%20%EC%A0%95%EB%A6%AC%20%EC%88%98%EC%97%85(%EB%81%84%EC%A0%81).assets/image-20220209002008701.png)
+
+![image-20220209002108562](HTML%20%EC%A0%95%EB%A6%AC%20%EC%88%98%EC%97%85(%EB%81%84%EC%A0%81).assets/image-20220209002108562.png)
