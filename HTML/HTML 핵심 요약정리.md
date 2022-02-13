@@ -195,7 +195,3 @@ span, a, img
 
 ![image-20220212224554582](HTML%20%ED%95%B5%EC%8B%AC%20%EC%9A%94%EC%95%BD%EC%A0%95%EB%A6%AC.assets/image-20220212224554582.png)
 
-``` css
-jh : 
-```
-
