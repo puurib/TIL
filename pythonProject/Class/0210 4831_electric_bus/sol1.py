@@ -3,36 +3,43 @@
 첫 줄엔 T = 노선 (tc)의 개수
 다음줄엔 각 노선별로 K, N, M이 주어지고,
 (K = 최대이동가능한 정류장수, N= 총 정류장 수, M= 충전기 설치된 정류장 수)
-numbers = 다음줄에 M개의 정류장 번호가 주어진다.
+charge_station = 다음줄에 M개의 정류장 번호가 주어진다.
 최소한 몇 번의 충전을 해야 종점에 도착할 수 있는지 출력하는 프로그램을 만드시오.
 만약 충전기 설치가 잘못되어 종점에 도착할 수 없는 경우는 0을 출력한다.
 출발지에는 항상 충전기가 설치되어 있지만 충전횟수에는 포함하지 않는다.
 '''
 
-import sys
-sys.stdin = open('input.txt')
-
+# 테스트 케이스 수 입력
 T = int(input())
 
-for tc in range(1, T + 1):
-    max_move, total_busstop, charge_num = map(int, (input().split()))
-    numbers = list(map(int, input().split())) # 충전기 설치된 정류장 리스트
+# T만큼 테스트 케이스 반복
+for tc in range(1, T+1):
+    # K : 한번 충전으로 최대한 이동할 수 있는 정류장 수
+    # N : 종점 정류장
+    # M : 충전기가 설치된 정류장 개수
+    K, N, M = list(map(int, input().split()))
 
-    # 1. 0 -> total_busstop 까지 가야하는데, 최대 이동거리는 max_move이다.
-    # 2. charge_num은 충전기가 설치된 정류장의 수, numbers는 충전기가 설치된 정류장 리스트이다.
-    
-    # 3. 우선 0, 1로 체크할 수 있는 리스트를 만들고 numbers와 비교해서 설치된 곳만 1로 표시!
-    check_lst = [0] * total_busstop
-    for number in numbers:
-        check_lst[number] += 1
-    # print(check_lst) 
-    
-    # 4. check_lst 를 돌면서, max_move만큼 가봄, 충전기를 만나면 충전,
-    for i in range(total_busstop):
-        i
+    # 충천지가 설치된 정류장 리스트 입력
+    charge_station = list(map(int, input().split()))
+    # 충전 횟수 count와 현재 위치 current 변수 초기화
+    count = current = 0
 
-    # 5. max_move에 충전기가 없다면 -1씩 뒤로 back해서 충전하고 그 위치부터 다시 출발.
-    
-    # 6. 5에서 이전 max_move 값 까지 아예 없으면 0을 출력해줄 것
-    
-    print(f'#{tc} {check_lst}')
+    # 종점에 도착할 때까지 반복
+    while current + K < N:
+        # K 범위 안에서 현 위치를 조정하면서 이동
+        for step in range(K, 0, -1):
+            # 현재 위치 + 이동 거리만큼 이동했을 때 충전기가 있는 정류장일 경우
+            if (current + step) in charge_station:
+                # 현재 위치를 변경
+                current += step
+                # 충전 횟수 +1
+                count += 1
+                # for 문을 종료
+                break
+        # 충전기 설치가 잘못되어 종점에 도착할 수 없는 경우 count를 0으로 하고 while문을 종료
+        else:
+            count = 0
+            break
+
+    # 결과 출력
+    print('#{} {}'.format(tc, count))
