@@ -31,25 +31,16 @@ for tc in range(1, T + 1):
     cnt = 0
     for i in range(1, N+1):
         arr.append(i)
-    print(arr)
-    print('----')
 
     for i in range((1<<N)): # 부분 집합의 개수 (공집합 제외)
         #print(i) 0~8까지 출력됨
         for j in range(N): # 원소 수만큼 비트를 비교함
-            if i & (1<<j):
+            if i & (1<<j)
                 arr.append(arr[j])
 
-        for a in arr:
-            sum = 0
-            if len(a) == 3:
-                for i in a:
-                    sum += i
-                    if sum == K:
-                        cnt += 1
 
 
-        print()
+        print(arr)
 
     # print(1<<N) # 8 32 32
 
