@@ -12,7 +12,7 @@ def is_pattern(m, s):
 
     return rlt
 
-map_1 = [['A', 'B', 'G', 'K', 'T', 'T', 'A', 'B']
+map_1 = ['A', 'B', 'G', 'K', 'T', 'T', 'A', 'B']
 sear_1 = ['T','A']
 ans = is_pattern(map_1, sear_1)
 print(ans)

@@ -1,0 +1,96 @@
+## SWEA
+
+# 1) STRING
+
+* 문자 표현
+
+![image-20220217112208001](SWEA%EB%AC%B8%EC%9E%90%EC%97%B4.assets/image-20220217112208001.png)
+
+![image-20220217112248261](SWEA%EB%AC%B8%EC%9E%90%EC%97%B4.assets/image-20220217112248261.png)
+
+
+
+
+
+* ASCII
+
+![image-20220217112320601](SWEA%EB%AC%B8%EC%9E%90%EC%97%B4.assets/image-20220217112320601.png)
+
+![image-20220217112431221](SWEA%EB%AC%B8%EC%9E%90%EC%97%B4.assets/image-20220217112431221.png)
+
+
+
+
+
+* 유니코드
+
+![image-20220217112530699](SWEA%EB%AC%B8%EC%9E%90%EC%97%B4.assets/image-20220217112530699.png)
+
+![image-20220217112637641](SWEA%EB%AC%B8%EC%9E%90%EC%97%B4.assets/image-20220217112637641.png)
+
+![image-20220217112720502](SWEA%EB%AC%B8%EC%9E%90%EC%97%B4.assets/image-20220217112720502.png)
+
+
+
+
+
+* 문자열의 분류
+
+![image-20220217112906958](SWEA%EB%AC%B8%EC%9E%90%EC%97%B4.assets/image-20220217112906958.png)
+
+
+
+* 메소드 중에 문자열 값을 변경하는 것은 원본 문자열 수정이 아니라 변경된 새로운 문자열을 만들어 내는 것
+
+![image-20220217112941572](SWEA%EB%AC%B8%EC%9E%90%EC%97%B4.assets/image-20220217112941572.png)
+
+![image-20220217113150167](SWEA%EB%AC%B8%EC%9E%90%EC%97%B4.assets/image-20220217113150167.png)
+
+![image-20220217113237753](SWEA%EB%AC%B8%EC%9E%90%EC%97%B4.assets/image-20220217113237753.png)
+
+
+
+
+
+* 문자열로 된 숫자를 정수로 변환하는 방법
+
+![image-20220217113339110](SWEA%EB%AC%B8%EC%9E%90%EC%97%B4.assets/image-20220217113339110.png)
+
+
+
+
+
+# 2) 패턴 찾기
+
+* 문자 표현
+
+![image-20220217113555746](SWEA%EB%AC%B8%EC%9E%90%EC%97%B4.assets/image-20220217113555746.png)
+
+
+
+* 찾는 문자열 뒤의 문자열을 임시 문자열에 복사해 놓고,
+* 문자열을 교체하고, 그 뒤에 나머지를 복사해서 넣음
+
+![image-20220217113712628](SWEA%EB%AC%B8%EC%9E%90%EC%97%B4.assets/image-20220217113712628.png)
+
+
+
+
+
+* 패턴 매칭 알고리즘 
+
+  * 고지식한 알고리즘 (부르트 포스)
+
+  ![image-20220217113816630](SWEA%EB%AC%B8%EC%9E%90%EC%97%B4.assets/image-20220217113816630.png)
+
+
+
+* 첫 문자열부터 시작,  세번째가 다르므로 다음으로 넘어감
+
+![image-20220217113905977](SWEA%EB%AC%B8%EC%9E%90%EC%97%B4.assets/image-20220217113905977.png)
+
+![image-20220217113926140](SWEA%EB%AC%B8%EC%9E%90%EC%97%B4.assets/image-20220217113926140.png)
+
+![image-20220217114014619](SWEA%EB%AC%B8%EC%9E%90%EC%97%B4.assets/image-20220217114014619.png)
+
+![image-20220217114110241](SWEA%EB%AC%B8%EC%9E%90%EC%97%B4.assets/image-20220217114110241.png)

@@ -8,46 +8,22 @@ swea 1210_ladder1
 1.
 
 '''
-
+# 목표: 랜덤한 text 안에서 pattern이 얼마나 반복되는지 카운트
 import sys
-sys.stdin = open('input.txt')
-from pprint import pprint
 
-# 테스트 케이스
-T = 10
+sys.stdin = open('input.txt', encoding='utf-8')
 
-# 테스트 케이스 만큼 입력 받기
-for test_case in range(1, T + 1):
-    data = []
-    N = int(input())
-    result = 0
-    for _ in range(100):
-        data.append([0] + list(map(int, input().split())) + [0])
+for _ in range(1, 11):
+    t = int(input())
+    p = input()
+    sentence = input()
 
-    # start, end point 선언
-    i = 99
-    j = data[99].index(2)
+    # 개수를 세어줄 변수
+    cnt = 0
 
-    while True:
-        if i == 0:
-            break
+    # 주어진 문장을 p의 길이만큼 순차적으로 확인하면서 p와 일치하면 cnt 1 증가
+    for i in range(len(sentence) - len(p) + 1):
+        if p == sentence[i:i + len(p)]:
+            cnt += 1
 
-        # 좌 조건 및 위 조건 나올때 까지 진행
-        if data[i][j - 1] == 1:
-            while True:
-                j -= 1
-                if data[i][j - 1] == 0:
-                    break
-
-        # 우 조건 및 위 조건 나올때 까지 진행
-        elif data[i][j + 1] == 1:
-            while True:
-                j += 1
-                if data[i][j + 1] == 0:
-                    break
-
-        # 위 조건 및 좌우 조건이 아니면 위로 진행
-        i -= 1
-
-    # 출력
-    print(f'#{test_case} {j - 1}')
+    print(f'#{t} {cnt}')

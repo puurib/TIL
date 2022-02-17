@@ -7,7 +7,7 @@
 
 # 받아오는 값이 양의 정수인지 체크
 n = 1461
-number = list(map(int, n))
+if n % 
 print(number)
     # for idx in range(len(number)):
     #     num_str += ''.join(idx)
