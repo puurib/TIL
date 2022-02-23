@@ -20,7 +20,8 @@ for tc in range(1, T + 1):
         open = 0
         close = 0
         new_lst = []
-        while len(lst) != 0:
+        i = new
+        while i != 0:
             if lst[0] == ')':
                 return False
 
