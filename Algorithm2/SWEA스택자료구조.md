@@ -1,0 +1,464 @@
+## SWEA STACK1
+
+# 1) 스택 자료구조의 개념
+
+![image-20220224133412507](../Algorithm/SWEA%EB%A6%AC%EC%8A%A4%ED%8A%B8.assets/image-20220224133412507.png)
+
+![image-20220224133545952](../Algorithm/SWEA%EB%A6%AC%EC%8A%A4%ED%8A%B8.assets/image-20220224133545952.png)
+
+
+
+* push
+
+![image-20220224134935171](../Algorithm/SWEA%EB%A6%AC%EC%8A%A4%ED%8A%B8.assets/image-20220224134935171.png)
+
+
+
+* pop
+
+![image-20220224135348700](../Algorithm/SWEA%EB%A6%AC%EC%8A%A4%ED%8A%B8.assets/image-20220224135348700.png)
+
+
+
+* 스택 구현하기
+
+![image-20220224135425290](../Algorithm/SWEA%EB%A6%AC%EC%8A%A4%ED%8A%B8.assets/image-20220224135425290.png)
+
+
+
+* 스택 구현 고려사항
+
+![image-20220224135651120](../Algorithm/SWEA%EB%A6%AC%EC%8A%A4%ED%8A%B8.assets/image-20220224135651120.png)
+
+
+
+
+
+# 2) 스택의 응용
+
+### 1. 괄호 검사
+
+![image-20220224135908538](../Algorithm/SWEA%EB%A6%AC%EC%8A%A4%ED%8A%B8.assets/image-20220224135908538.png)
+
+
+
+
+
+* 여는 괄호이면 스택에 저장하고, 닫는 괄호이면 pop 하여 비교한다고 쳤을 때
+
+![image-20220224140153738](../Algorithm/SWEA%EB%A6%AC%EC%8A%A4%ED%8A%B8.assets/image-20220224140153738.png)
+
+![image-20220224140219316](../Algorithm/SWEA%EB%A6%AC%EC%8A%A4%ED%8A%B8.assets/image-20220224140219316.png)
+
+
+
+* 함수 호출 관리
+
+![image-20220224140357017](../Algorithm/SWEA%EB%A6%AC%EC%8A%A4%ED%8A%B8.assets/image-20220224140357017.png)
+
+* 실행 순서
+
+![image-20220224140448321](../Algorithm/SWEA%EB%A6%AC%EC%8A%A4%ED%8A%B8.assets/image-20220224140448321.png)
+
+![image-20220224140520273](../Algorithm/SWEA%EB%A6%AC%EC%8A%A4%ED%8A%B8.assets/image-20220224140520273.png)
+
+![image-20220224140535238](../Algorithm/SWEA%EB%A6%AC%EC%8A%A4%ED%8A%B8.assets/image-20220224140535238.png)
+
+
+
+
+
+* 재귀호출
+
+![image-20220224140612017](../Algorithm/SWEA%EB%A6%AC%EC%8A%A4%ED%8A%B8.assets/image-20220224140612017.png)
+
+
+
+
+
+* 팩토리얼
+
+![image-20220224140702416](../Algorithm/SWEA%EB%A6%AC%EC%8A%A4%ED%8A%B8.assets/image-20220224140702416.png)
+
+ ![image-20220224140736906](../Algorithm/SWEA%EB%A6%AC%EC%8A%A4%ED%8A%B8.assets/image-20220224140736906.png)
+
+![image-20220224140754718](../Algorithm/SWEA%EB%A6%AC%EC%8A%A4%ED%8A%B8.assets/image-20220224140754718.png)
+
+
+
+
+
+# 3) memoization - 피보나치 수열
+
+* 피보나치 수열은 처음 시작값과 2번째 값이 0, 1이며, 이후 i번째 값은 i-2, i-1의 값으로 구할 수 있음
+
+![image-20220224140946033](../Algorithm/SWEA%EB%A6%AC%EC%8A%A4%ED%8A%B8.assets/image-20220224140946033.png)
+
+ 
+
+* 중복값이 많다.
+
+![image-20220224141021800](../Algorithm/SWEA%EB%A6%AC%EC%8A%A4%ED%8A%B8.assets/image-20220224141021800.png)
+
+![image-20220224141043296](../Algorithm/SWEA%EB%A6%AC%EC%8A%A4%ED%8A%B8.assets/image-20220224141043296.png)
+
+
+
+* 중복값 같은 단점을 보완하는 것이 메모이제이션
+  * 동적 계획법의 핵심
+
+![image-20220224141133683](../Algorithm/SWEA%EB%A6%AC%EC%8A%A4%ED%8A%B8.assets/image-20220224141133683.png)
+
+![image-20220224141247439](../Algorithm/SWEA%EB%A6%AC%EC%8A%A4%ED%8A%B8.assets/image-20220224141247439.png)
+
+
+
+
+
+# 4) 동적 계획법(DP ; Dynamic Programming)
+
+![image-20220224141348736](../Algorithm/SWEA%EB%A6%AC%EC%8A%A4%ED%8A%B8.assets/image-20220224141348736.png)
+
+![image-20220224141418151](../Algorithm/SWEA%EB%A6%AC%EC%8A%A4%ED%8A%B8.assets/image-20220224141418151.png)
+
+ 
+
+![image-20220224141557183](../Algorithm/SWEA%EB%A6%AC%EC%8A%A4%ED%8A%B8.assets/image-20220224141557183.png)
+
+![image-20220224141624883](../Algorithm/SWEA%EB%A6%AC%EC%8A%A4%ED%8A%B8.assets/image-20220224141624883.png)
+
+
+
+* 작은값부터 상위로 구해나감.
+
+![image-20220224141923977](../Algorithm/SWEA%EB%A6%AC%EC%8A%A4%ED%8A%B8.assets/image-20220224141923977.png)
+
+ 
+
+* DP의 구현반식은 두가지 - 재귀, 반복문 (반복문이 더 성능면에선 효율적임)
+
+![image-20220224142212080](../Algorithm/SWEA%EB%A6%AC%EC%8A%A4%ED%8A%B8.assets/image-20220224142212080.png)
+
+
+
+
+
+# 5) 깊이 우선 탐색 (DFS ; Depth First Search)
+
+![image-20220224142453642](../Algorithm/SWEA%EB%A6%AC%EC%8A%A4%ED%8A%B8.assets/image-20220224142453642.png)
+
+![image-20220224142538391](../Algorithm/SWEA%EB%A6%AC%EC%8A%A4%ED%8A%B8.assets/image-20220224142538391.png)
+
+![image-20220224142754948](../Algorithm/SWEA%EB%A6%AC%EC%8A%A4%ED%8A%B8.assets/image-20220224142754948.png)
+
+
+
+* DFS 예시
+
+![image-20220224142852283](../Algorithm/SWEA%EB%A6%AC%EC%8A%A4%ED%8A%B8.assets/image-20220224142852283.png)
+
+![image-20220224142920683](../Algorithm/SWEA%EB%A6%AC%EC%8A%A4%ED%8A%B8.assets/image-20220224142920683.png)
+
+![image-20220224143346965](../Algorithm/SWEA%EB%A6%AC%EC%8A%A4%ED%8A%B8.assets/image-20220224143346965.png)
+
+
+
+
+
+## SWEA STACK2
+
+# 1) 계산기
+
+![image-20220224143700273](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224143700273.png)
+
+
+
+
+
+* 중위표기식 -> 후위표기식
+
+![image-20220224143809250](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224143809250.png)
+
+![image-20220224143910975](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224143910975.png)
+
+![image-20220224144339674](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224144339674.png)
+
+![image-20220224144521111](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224144521111.png)
+
+![image-20220224144641762](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224144641762.png)
+
+![image-20220224144834547](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224144834547.png)
+
+![image-20220224144850053](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224144850053.png)
+
+![image-20220224145320777](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224145320777.png)
+
+![image-20220224145301467](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224145301467.png)
+
+![image-20220224145244458](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224145244458.png)
+
+![image-20220224145417808](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224145417808.png)
+
+![image-20220224145443779](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224145443779.png)
+
+
+
+
+
+#### 계산시 주의 : 앞선 상황에서는 연산자를 스택에 쌓았지만 지금부터는 피연산자를 스택에 쌓아 계산할 거라는 점임
+
+* 후위표기법의 수식을 스택을 이용해서 계산
+
+![image-20220224145548875](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224145548875.png)
+
+
+
+#### 1. 피연산자 4개를 순서대로 스택에 push
+
+![image-20220224145700885](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224145700885.png)
+
+
+
+#### 2. 계산시 위치 주의
+
+![image-20220224145746496](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224145746496.png)
+
+
+
+
+
+#### 3. 
+
+![image-20220224145821754](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224145821754.png)
+
+
+
+
+
+#### 4. 
+
+![image-20220224145856869](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224145856869.png)
+
+
+
+
+
+#### 5. 
+
+![image-20220224145927734](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224145927734.png)
+
+
+
+
+
+#### 6. 검산
+
+![image-20220224145956051](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224145956051.png)
+
+
+
+
+
+#### 문자열로 된 수식 계산시
+
+![image-20220224150104658](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224150104658.png)
+
+
+
+
+
+# 백트래킹 - 해를 찾는 도중에 막히면, 되돌아가서 다시 해를 찾는다. (최적화문제, 결정 문제를 해결하는 방법)
+
+![image-20220224152903408](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224152903408.png)
+
+
+
+#### 미로찾기
+
+* 
+
+![image-20220224153031943](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224153031943.png)
+
+![image-20220224153126675](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224153126675.png)
+
+![image-20220224153145452](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224153145452.png) 
+
+![image-20220224153211561](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224153211561.png)
+
+
+
+
+
+### 백트레킹(가지치기가 가능), 깊이 우선 탐색의 차이
+
+![image-20220224153350931](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224153350931.png)
+
+
+
+* 유망하다 = 해답의 가능성이 있다
+
+![image-20220224153621811](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224153621811.png)
+
+
+
+* 
+
+![image-20220224153718215](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224153718215.png)
+
+
+
+* N 퀸 문제
+
+![image-20220224153759328](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224153759328.png)
+
+
+
+* 2,3에 놓으면 퀸을 배치할 수 없다
+
+<img src="SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224153840124.png" alt="image-20220224153840124" style="zoom: 33%;" /><img src="SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224153907568.png" alt="image-20220224153907568" style="zoom:33%;" />
+
+* 2,4에 배치
+
+<img src="SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224153959485.png" alt="image-20220224153959485" style="zoom:33%;" /><img src="SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224154015339.png" alt="image-20220224154015339" style="zoom:33%;" />
+
+
+
+* 다시 돌아가서 배치 시작 - 4개 다 배치
+
+![image-20220224154104238](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224154104238.png)
+
+
+
+* 상태 공간 트리 (사전에 탐색을 중지하기 때문에 DFS보다 노드 수가 적다.)
+
+![image-20220224154127133](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224154127133.png)
+
+![image-20220224154221622](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224154221622.png)
+
+
+
+
+
+* power set (부분집합)
+
+![image-20220224154705312](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224154705312.png)
+
+![image-20220224154733835](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224154733835.png)
+
+* 후보군 구하는 함수
+
+![image-20220224154806447](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224154806447.png)
+
+
+
+
+
+* 처음에 main에서 3개의 원소로 이루어진 부분집합을 구함
+  * 백트랙함수가 호출, 백트랙함수가 아직 원하는 값이 아니니까 후보군 함수 호출
+
+![image-20220224154933560](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224154933560.png)
+
+* 후보군 함수 호출하고, 참 거짓값을 저장한 리스트를 반환한다.
+
+![image-20220224155617759](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224155617759.png)
+
+* 1,2,3을 모두갖는 부분집합이 출력됨
+
+![image-20220224155732725](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224155732725.png)
+
+
+
+* 
+
+![image-20220224160000153](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224160000153.png)
+
+![image-20220224160259970](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224160259970.png)
+
+
+
+
+
+#### 백트래킹으로 순열구하는 알고리즘
+
+![image-20220224160704974](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224160704974.png)
+
+
+
+* 후보군 구하기
+
+![image-20220224160735940](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224160735940.png)
+
+
+
+* 파란상자로 진행함 , 리스트값 k는 과정의 단계,  전체 과정의 값이 3
+
+![image-20220224160928483](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224160928483.png)
+
+![image-20220224161855984](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224161855984.png)
+
+
+
+
+
+# 분할정복 알고리즘
+
+![image-20220224162212346](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224162212346.png)
+
+
+
+* 시간복잡도
+
+![image-20220224162239431](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224162239431.png)
+
+![image-20220224162806896](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224162806896.png)
+
+
+
+
+
+* 퀵 정렬 알고리즘
+  * 입력받은 리스트에서 피봇을 구하고, 피봇보다 작은 부분은 다시 퀵 정렬한 후, 피봇보다 큰 부분을 다시 퀵 정렬한다. 
+  * 기본적인건 리스트의 왼쪽에서 오른쪽으로 이동, 피봇과 비교조사
+
+![image-20220224163148205](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224163148205.png)
+
+
+
+* 
+
+![image-20220224163433061](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224163433061.png)
+
+
+
+
+
+* 실제 퀵 정렬 수행
+  * L이 오른쪽으로 이동하면서 피봇보다 크거나 같은 원소를 찾음
+  * R은 왼쪽으로 이동하면서 피봇보다 작은 원소를 찾음
+  * L과 R이 만나면 원소 68을 피봇과 교환하여 피봇원소 3의 위치를 확정지음
+
+![image-20220224164359170](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224164359170.png)
+
+
+
+*  L과 R이 만나지않음
+
+![image-20220224164920073](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224164920073.png)
+
+
+
+* 
+
+![image-20220224165026901](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224165026901.png)
+
+
+
+* 
+
+![image-20220224165126751](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224165126751.png)
+
+![image-20220224165409335](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224165409335.png)
+
+![image-20220224165436419](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224165436419.png)
+
+![image-20220224165457284](SWEA%EC%8A%A4%ED%83%9D%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.assets/image-20220224165457284.png)
