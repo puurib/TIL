@@ -1,4 +1,8 @@
-# SWEA 문제
+# * 2, 4번은 반드시 풀기
+
+
+
+# 1) SWEA 문제
 
 | 문제    | 번호 | 이름/링크                                                    | 풀었나?!          |
 | ------- | ---- | ------------------------------------------------------------ | ----------------- |
@@ -31,4 +35,26 @@
 | SWEA_D3 | 4843 | [4843. [파이썬 S/W 문제해결 기본] 2일차 - 특별한 정렬](https://swexpertacademy.com/main/learn/course/lectureProblemViewer.do) |                   |
 | SWEA_D3 | 5431 | [5431. 민석이의 과제 체크하기](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWVl3rWKDBYDFAXm) |                   |
 | SWEA_D3 | 6190 | [6190. 정곤이의 단조 증가하는 수](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWcPjEuKAFgDFAU4) |                   |
+
+
+
+# 2) IM 문제
+
+* 풀이순서 차르붐바-> led조명-> 케이크
+
+![image-20220225170032206](IM%EC%8B%9C%ED%97%98%EB%8C%80%EB%B9%84.assets/image-20220225170032206.png)
+
+
+
+# 3) 보충
+
+| 문제    | 번호 | 이름/링크                                                    | 풀었나?! |
+| ------- | ---- | ------------------------------------------------------------ | -------- |
+| SWEA_D3 |      | [오목판정](https://swexpertacademy.com/main/talk/solvingClub/problemView.do?solveclubId=AX7UAR9KZLgDFAVm&contestProbId=AXaSUPYqPYMDFASQ&probBoxId=AX8hAjjKpUMDFAW0&type=PROBLEM&problemBoxTitle=22.02.23+%28%EC%88%98%29+IM+%EB%B3%B4%EC%B6%A9%EC%88%98%EC%97%85&problemBoxCnt=2) |          |
+|         |      | 스도쿠검증                                                   |          |
+|         |      |                                                              |          |
+
+
+
+# 4) 알고리즘 과목평가 1, 2번 
 
