@@ -1,4 +1,6 @@
 '''
+led조명 - 1차원리스트 & 그리디
+
 [input.txt]
 5 // 전체 Test Case 수
 5 // 첫번째 Test Case의 N (LED 등 및 버튼의 수 )
@@ -29,19 +31,24 @@ T = int(input())
 
 for tc in range(1, T + 1):
     N = int(input())
-    arr = list(map(int, input().split())) # 원하는 스위치의 상태
+    arr = [0]+list(map(int, input().split())) # 원하는 스위치의 상태 [0]을 더해줌 인덱스맞추려고
+    lst = [0] * (N+1)
+    cnt = 0
 
-    lst = [0] * N
-    num = [i for i in range(1, N+1)]
+    for i in range(N+1):
+        if i == 0: # arr[i] 이렇게하면 답안나옴..
+            continue
+        if arr[i] == lst[i]: # 같으면 넘어가!
+            continue
+        else: # arr[i] != lst[i]
+            for j in range(i, N+1):
+                if j % i == 0:
+                    if lst[j]:
+                        lst[j] = 0
+                    else:
+                        lst[j] = 1
+            cnt += 1
 
-
-    for i in range(N):
-        if num[i] % i+1 == 0:  # arr[0] 을 1로 나눌때부터
-            if lst[i] == 0:
-                lst[i] = 1
-            elif list[i] == 1:
-                lst[i] == 0
-
-    print(f'#{tc} {arr} {lst}')
-    #pprint(arr)
-
+        if lst == arr:
+            print(f"#{tc} {cnt}")
+            break

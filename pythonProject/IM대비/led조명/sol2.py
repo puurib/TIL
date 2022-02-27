@@ -9,14 +9,12 @@ for test_case in range(1, TC + 1):
     length_N = int(input())
     led = [0] * (length_N + 1)
     led_rlt = list(map(int, input().split()))
-    print(led_rlt)
     led_rlt.insert(0, 0)
-    print(led_rlt)
     count = 0
 
     # solve
     for i in range(length_N + 1):
-        if i == 0: # 0은 안함
+        if i == 0: # 0은 안함 - 인덱스 맞춰주려고 넣었군..
             continue
         if led[i] == led_rlt[i]:  # led_rlt[i]가 0이면 안함
             continue

@@ -28,15 +28,16 @@ for tc in range(1, T + 1):
                     lst.append(arr[i] * arr[j])
 
     num_lst = []
-    for num in range(len(lst)):
-        str_len = len(str(lst[num]))
+    str_lst = list(map(str, lst))
+    for num in range(len(str_lst)):
+        str_len = len(str_lst[num])
         if str_len == 1:
             num_lst.append(lst[num])
         else:
             j = 0
             for j in range(str_len):
                 if j+1 <= str_len:
-                    if int(str_len[j])  <= int(str_len[j+1]):
+                    if int(str_len[j]) <= int(str_len[j+1]):
                         rlt = 'ok'
                 else:
                     rlt = 'no'
