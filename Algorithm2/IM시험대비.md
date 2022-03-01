@@ -25,8 +25,8 @@
 | SWEA_D2 | 1974 | [1974. 스도쿠 검증](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5Psz16AYEDFAUq) |                    |
 | SWEA_D2 | 1979 | [1979. 어디에 단어가 들어갈 수 있을까](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5PuPq6AaQDFAUq) | 0                  |
 | SWEA_D2 | 2001 | [2001. 파리 퇴치](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5PzOCKAigDFAUq) |                    |
-| SWEA_D3 | 2805 | [2805. 농작물 수확하기](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV7GLXqKAWYDFAXB) |                    |
-| SWEA_D3 | 4466 | [4466. 최대 성적표 만들기](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWOUfCJ6qVMDFAWg) |                    |
+| SWEA_D3 | 2805 | [2805. 농작물 수확하기](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV7GLXqKAWYDFAXB) | 0                  |
+| SWEA_D3 | 4466 | [4466. 최대 성적표 만들기](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWOUfCJ6qVMDFAWg) | 0                  |
 | 7문제   |      |                                                              |                    |
 | SWEA_D2 | 4828 | [4828. [파이썬 S/W 문제해결 기본] 1일차 - min max](https://swexpertacademy.com/main/learn/course/lectureProblemViewer.do) | 0                  |
 | SWEA_D2 | 4834 | [4834. [파이썬 S/W 문제해결 기본] 1일차 - 숫자 카드](https://swexpertacademy.com/main/learn/course/lectureProblemViewer.do) | 0                  |
