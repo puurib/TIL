@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1> 오늘 저녁은 {{pick}}이다!! </h1>
+  <p> {{pick}}은 {{pick|length}} 글자 </p>
+  <p> {{foods|join:', '}} </p>
+
+  <p> </p>
+  <ul>
+    {% for food in foods %}
+      <li>{{food}}</li>
+    {% endfor%}
+  </ul>
+  {# 이것은 한 줄 주석입니다.#}
+  {% comment %}
+  <p> html주석도 사용가능하다 </p>
+  <p> 컨트롤 슬래시</p>
+  <p> 이것은 여러줄 주석입니다.</p>
+  {% endcomment %}
+  <a href="{% url 'articles:index' %}">뒤로</a>
+{% endblock content%}

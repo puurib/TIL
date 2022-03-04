@@ -1,0 +1,10 @@
+<!--articles/templates/index.html-->
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>만나서 반가워요!</h1>
+  <a href="{% url 'articles:greeting' %}"> 그리팅~!</a> 
+  <a href="{% url 'articles:dinner' %}"> 디너~!</a>  
+  <a href="{% url 'articles:throw' %}"> throw~</a>  
+  <a href="{% url 'articles:index' %}"> pages index</a>       
+{% endblock content%}
