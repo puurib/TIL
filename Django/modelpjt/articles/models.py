@@ -7,3 +7,5 @@ class Article(models.Model):
     created_at = models.DateTimeField(auto_now_add=True) # auto_now_add 최초 1번 저장
     updated_at = models.DateTimeField(auto_now=True) #auto_now 데이터 수정될때마다 갱신
 
+    def __str__(self):
+        return self.title
