@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+  
+{% block content %}
+  <h1 class="text-center"> Articles Detail </h1>
+  <h3 class="text-center"> {{article.id}} 번째 글</h3>
+  <p> 제목 : {{article.title}} </p>
+  <p> 내용 : {{article.content}} </p>
+  <p> 작성 시간 : {{article.created_at}} </p>
+  <p> 작성 시간 : {{article.updated_at}} </p>
+  <hr>
+  <a href="{% url 'articles:index' %}"> 목록보기 </a>
+  <a href="{% url 'articles:edit' article.pk %}" class="btn btn-primary"> 수정하기 </a>
+  <!--<a href="{% url 'articles:delete' article.pk%}"> 삭제하기 </a>-->
+  <!-- 동일 페이지에서 누르자 마자 처리해야함 post 방식으로 하기 -> form 쓰기-->
+  <form action="{% url 'articles:delete' article.pk %}" method="post">
+    {% csrf_token %}
+    <button class="btn btn-danger"> 삭제하기 </button>
+    
+{% endblock content %}

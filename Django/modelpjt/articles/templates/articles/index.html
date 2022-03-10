@@ -6,8 +6,11 @@
   {% for o in obj %}
   <div class="mt-5 mb-5">
     <h5 class="text-center"> 글 번호 : {{ o.id }}</h5>
+    <!--
     <h5 class="text-center"> 글 제목 : {{ o.title }}</h5>
     <h5 class="text-center"> 글 내용 : {{ o.content }}</h5>
+    -->
+    <a href="{% url 'articles:detail' o.id %}"> 글 제목 : {{o.title}} </a>
     <hr>
   </div>
   {% endfor %}

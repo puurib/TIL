@@ -9,6 +9,7 @@ urlpatterns = [
     path('dinner/', views.dinner, name='dinner'),
     path('throw/', views.throw, name='throw'),
     path('catch/', views.catch, name='catch'),
+    path('lotto/', views.lotto, name='lotto'),
     path('hello/<str:name>', views.hello, name='hello'),
     path('intro/<str:name>/<int:age>',views.intro, name='intro'),
 ]

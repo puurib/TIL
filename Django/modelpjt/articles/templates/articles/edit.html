@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+
+  <h1 class="text-center"> edit </h1>
+  <form action="{% url 'articles:update' article.pk%}" method="POST">
+    <!--method="POST", csrf_token은 짝꿍-->
+    {% csrf_token %}
+    <!--lable의 for와, input의 id는 짝꿍-->
+    <!--input의 name은 서버로 보낼 때 필요-->
+    <label for="title"> Title : </label> 
+    <!-- 인풋은 value속성을 넣고, textarea는 속성이없어서 그냥 써줌-->
+
+    <input type="text" id="title" name="title" value={{article.title}}>
+    <br> <!--줄바꿈 breaking line-->
+    <label for="content"> Content : </label>
+    <br>
+    <textarea name="content" cols="30" rows="5" id="content">{{article.content}} </textarea>
+    <br>
+    <input type="submit">
+  </form>
+
+  <!--<a href="{/articles/index/}">목록보기 </a>-->
+
+  <a href="{% url 'articles:index' %}">목록보기 </a>
+{% endblock content %}
