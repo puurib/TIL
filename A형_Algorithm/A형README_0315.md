@@ -150,3 +150,7 @@ A형 꿀팁 :모의라고 치면 비슷한거 많이 나옴
 https://www.acmicpc.net/workbook/view/1152
 
 ![image-20220315130929003](A%ED%98%95README_0315.assets/image-20220315130929003.png)
+
+
+
+큐
