@@ -1,3 +1,47 @@
+[5회차 과목평가 (framework) 공지]
+다음 주 진행되는 Framework 과목평가 관련하여 안내드립니다. 
+일시: 03월 21일 (월) 09:00 ~ 10:00 (1h)
+과목: Framework
+시험범위: 교재 기준 django_01, django_02, homework, workshop 등
+단, 3월 14일 수업 내용 (SQL) 제외
+시험유형: 객관식, 단답형 및 서술형으로 구성
+
+* 평가 관련해서 문의사항 있을 시 쓰레드를 통해 질문 남겨주세요.
+
+---
+
+28점.
+
+
+
+extends 
+
+관리자 모델, 어드민, 
+
+경로 app_name (언더바 빼먹으면  x)
+
+데이터 정렬 order by
+
+어드민 :  사이트.register
+
+migrate 
+
+오토나우에드, 
+
+base_dir (대문자!!)
+
+프레임워크에 대한 전반적인설명
+
+장고 프레임워크 mtv 패턴 - 뭐였더라?
+
+create superuser 
+
+
+
+탈락자는 없고 평균은 낮도록 출제
+
+---
+
 # 1번ppt) Django - the web framework
 
 https://edu.ssafy.com/edu/lectureroom/openlearning/openLearningView.do#none;
