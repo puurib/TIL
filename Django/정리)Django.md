@@ -3,8 +3,13 @@
 * 시험범위: 교재 기준 django_01, django_02, homework, workshop 등
   단, 3월 14일 수업 내용 (SQL) 제외
 * 시험유형: 객관식, 단답형 및 서술형으로 구성
-
 * 알려준 문제 배점 총 28점 (탈락자는 없고 평균은 낮도록 출제)
+
+
+
+
+
+.
 
 ---
 
@@ -32,10 +37,6 @@ base_dir (대문자!!)
 
 create superuser 
 
-
-
-
-
 ---
 
 # 1번ppt) Django - the web framework
@@ -43,6 +44,8 @@ create superuser
 https://edu.ssafy.com/edu/lectureroom/openlearning/openLearningView.do#none;
 
 ## 목차
+
+![image-20220320000809309](%EC%A0%95%EB%A6%AC)Django.assets/image-20220320000809309.png)
 
 
 
@@ -52,17 +55,14 @@ https://edu.ssafy.com/edu/lectureroom/openlearning/openLearningView.do#none;
 >
 >Django는 빠른 개발과 깨끗하고 실용적인 디자인을 장려하는 고급 python 웹 프레임워크입니다. 웹 개발의 번거로움을 많이 덜어주기 때문에 번거로운 작업 없이 앱 작성에 집중할 수 있습니다.
 
-
-
 ## Web framework
 
 * Django
-
 * web(world wide web)
 * static web page (정적 웹 페이지)
+  * 일반적으로 HTML, CSS, JavaScript로 작성됨
 * dynamic web page (동적 웹 페이지)
 * 정적 웹 페이지 vs 동적 웹 페이지
-
 * framework (Application framework)
 * web framework 
 
