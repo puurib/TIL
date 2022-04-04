@@ -26,7 +26,7 @@ for tc in range(1, T + 1):
         jump = r[3]
         #print(ii, jj)
 
-        arr[ii][jj] = 1  # 시작점은 무조건 1 찍기
+        #arr[ii][jj] = 1  # 시작점은 무조건 1 찍기
 
         # arr을 순회하면서 시작점이 되는 때에,
         for i in range(N):
