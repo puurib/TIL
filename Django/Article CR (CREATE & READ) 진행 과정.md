@@ -28,7 +28,7 @@ $ source venv/Scripts/activate
 $ pip list
 ```
 
-
+django-admin startproject crud .
 
 
 

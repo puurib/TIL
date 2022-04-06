@@ -16,7 +16,7 @@ def DFS_1(n):
 
     # DFS_1은 이부분이 바뀜
     for j in range(N):
-        if v1[j] == v2[n+j]== v3[n-j] == 0:
+        if v1[j] == v2[n+j] == v3[n-j] == 0:
             v1[j] = v2[n+j]= v3[n-j] = 1
             DFS_1(n+1)
             v1[j] = v2[n+j]= v3[n-j] = 0
