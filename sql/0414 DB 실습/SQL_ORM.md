@@ -78,7 +78,7 @@
 
 1. `users.csv` 를 `users_user`로 만드는 이유?
 
-2. db.sqlite3에서는 auth_group, django_session 등으로 되어 있는데 언더바를 기준으로 테이블, db등의 의미가 있는 건가요?
+2. db.sqlite3에서는 auth_group, django_session 등으로 되어 있는데 언더바를 기준으로 db, 테이블 같은건가요? 아님 그냥 의미상 나눠놓은 건가요?
 3. orm시에 from users.models import User 를 사용하는데 이거는 users.model에서 User 테이블을 넣는건지?
 4. ![image-20220414104745575](SQL_ORM.assets/image-20220414104745575.png)
 
