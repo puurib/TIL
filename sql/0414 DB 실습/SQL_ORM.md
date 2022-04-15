@@ -110,7 +110,8 @@
 2. user 레코드 생성
 
    ```python
-   # orm
+   # orm 
+   # id 는 굳이 적을 필요없음
    User.objects.create(first_name='중구', last_name='이', age=30, country='충청남도', phone='010-1234-5678', balance=45000)
    ```
 
@@ -128,6 +129,7 @@
 
    ```python
    # orm
+   User.objects.get(id=101)
    User.objects.get(pk=101)
    ```
 
@@ -142,6 +144,7 @@
 
    - ORM: `102` 번 글의 `last_name` 을 '김' 으로 수정
    - SQL: `102` 번 글의 `first_name` 을 '철수' 로 수정
+   - ![image-20220414140922260](SQL_ORM.assets/image-20220414140922260.png)
 
    ```python
    # orm
@@ -150,10 +153,10 @@
    user.save()
    ```
 
-      ```sql
+   ```sql
    -- sql
    UPDATE users_user SET first_name='철수' WHERE id=101;
-      ```
+   ```
 
 5. 해당 user 레코드 삭제
 
@@ -162,14 +165,19 @@
 
    ```python
    # orm
-   user = User.objects.get(pk=101)
+   user = User.objects.get(pk=101).delete()
+   
+   혹은
+   user = User.objects.get(id=102)
+   user.delete()
+   user.save()
+   ```
 ```
    
    ```sql
    -- sql
-   delete from users_user 
-   where id = 102;
-   ```
+  DELETE FROM users_user WHERE id=102;
+```
 
 ![image-20220414095627098](SQL_ORM.assets/image-20220414095627098.png)
 
@@ -185,6 +193,8 @@
 
    ```python
    # orm
+   User.objects.count()
+   혹은
    User.objects.all().count()
    len(User.objects.all())  # 가급적 len()은 사용하지 말라고 공식문서에 나와있다.
    ```
@@ -260,9 +270,16 @@
 
 6. 나이가 30이거나 성이 김씨인 사람?
 
+   * or조건이면 Q()를 쓰는게 좋구나!
+   * ![image-20220414142240559](SQL_ORM.assets/image-20220414142240559.png)
+
    ```python
    # orm
+   from django.db.models import Q
    User.objects.filter(Q(age=30) | Q(last_name='김')) 
+   
+   or 
+   (User.objects.filter(age=30)|User.objects.filter(last_name='김')).count()
    ```
 
    ```sql
@@ -289,12 +306,12 @@
    ```python
    # orm
    User.objects.filter(country='강원도', last_name='황').values('first_name') # 이걸로!
-
+   
    # '은정'만 뽑아 올려면 다음과 같이 작성해야 한다.
    # <QuerySet [{'first_name': '은정'}]> => QuerySet의 첫 번째 요소 임을 주의!
    User.objects.filter(country='강원도', last_name='황').values('first_name').first().get('first_name')
    ```
-   
+
       ```sql
    -- sql
    SELECT first_name FROM users_user WHERE country='강원도' and last_name='황';
@@ -337,25 +354,29 @@
       ```python
    # orm
    User.objects.order_by('balance', '-age')[:10]
+   ```
 ```
    
    ```sql
    -- sql
    SELECT * FROM users_user ORDER BY balance, age DESC LIMIT 10;
-   ```
-   
+```
+
 4. 성, 이름 내림차순 순으로 5번째 있는 사람
 
    ```python
-   # orm
+   # orm 
+   # 인덱스로 4번째
+   # [:4]이러면 틀림
    User.objects.order_by('-last_name', '-first_name')[4]
+   ```
 ```
    
       ```sql
    -- sql 
    -- OFFSET : 원하는 행만큼 뛰어넘기
    SELECT * FROM users_user ORDER BY last_name DESC, first_name DESC LIMIT 1 OFFSET 4;
-      ```
+```
 
 
 
@@ -368,9 +389,12 @@
 #### 4.1 Aggregate
 
 > - https://docs.djangoproject.com/en/3.2/topics/db/aggregation/#aggregation
->- '종합', '집합', '합계' 등의 사전적 의미
+> - '종합', '집합', '합계' 등의 사전적 의미
 > - 특정 필드 전체의 합, 평균 등을 계산할 때 사용
->- `Django_aggregation.md` 문서 참고
+> - `Django_aggregation.md` 문서 참고
+> - ![image-20220414143434698](SQL_ORM.assets/image-20220414143434698.png)
+> - 파라미터로 집계함수를 받아서, 딕셔너리로 반환함. 키값은 ![image-20220414143500162](SQL_ORM.assets/image-20220414143500162.png)
+> - 원하는 키의 이름으로 바꿀 수 있다![image-20220414143545668](SQL_ORM.assets/image-20220414143545668.png)
 
 1. 전체 평균 나이
 
@@ -427,23 +451,34 @@
 
    ```python
    # orm
-   User.objects.aggregate(Max('balance'))
+   User.objects.aggregate(Sum('balance'))
+   ```
 ```
    
       ```sql
    -- sql
    SELECT SUM(balance) FROM users_user;
-      ```
+```
 
 
 
-#### 4.2 Annotate
+#### 4.2 Annotate (시험 나왔음) = sql의 group by 
+
+* `Annotate` : 주석, 한마디로 쿼리셋에 어떠한 값으로 컬럼을 추가해주는 것
+
+* 데이터 베이스에 영향을 주지 않고 쿼리셋에 컬럼하나 추가하는 것
+
+* ![image-20220414144253974](SQL_ORM.assets/image-20220414144253974.png)
+
+  
 
 1. 지역별 인원 수
 
    ```PYTHON
    # orm
-   
+   from django.db.models import Count
+   User.objects.values('country').annotate(each_total=Count('country'))
+   ```
 ```
    
    ```SQL
@@ -451,6 +486,6 @@
 SELECT country, count(*)
    FROM users_user
    GROUP BY country;
-   ```
-   
+```
+
    
