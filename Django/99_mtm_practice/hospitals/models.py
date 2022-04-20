@@ -15,3 +15,5 @@ class Patient(models.Model):
 
     def __str__(self):
         return f'{self.pk}번 환자 {self.name}'
+
+        
