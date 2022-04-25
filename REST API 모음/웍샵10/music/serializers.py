@@ -14,7 +14,7 @@ class MusicListSerializer(serializers.Serializer):
         fields = ('id', 'title',)
 
 # 상세 가수정보
-class ArtistSerializer(serializers.Serializer):
+class ArtistDetailSerializer(serializers.Serializer):
     music_set = MusicListSerializer(many = True, read_only =True)
     class Meta:
         model = Artist
@@ -22,7 +22,7 @@ class ArtistSerializer(serializers.Serializer):
         #fields = ('id', 'name', 'music_set',)
 
 # 상세 음악정보
-class MusicSerializer(serializers.Serializer):
+class MusicDetailSerializer(serializers.Serializer):
     class Meta:
         model = Music
         fields = ('id', 'title', 'artist',)
