@@ -11,6 +11,6 @@ const areas = []
 
 images.forEach((elem, idx) => {
   // 나만의 로직
-  console.log(elem, idx)
-
+  //console.log(elem, idx)
+  
 })

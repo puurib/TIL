@@ -89,7 +89,7 @@ ORDER BY NAME
 
 ``` mysql
 SELECT ANIMAL_ID, NAME
-FROM ANIMAL_INS 
+FROM ANIMAL_INS
 WHERE ANIMAL_TYPE = "Dog" AND NAME LIKE "%EL%" 
 ORDER BY NAME ASC
 ```
@@ -104,9 +104,8 @@ ORDER BY NAME ASC
 
 ``` mysql
 SELECT ANIMAL_ID, NAME, 
-CASE WHEN SEX_UPON_INTAKE LIKE "%NE%" 
-OR SEX_UPON_INTAKE LIKE "SP%"
-THEN 'O' ELSE 'X' 
+CASE WHEN SEX_UPON_INTAKE LIKE "%NE%" OR SEX_UPON_INTAKE LIKE "SP%" THEN 'O' 
+ELSE 'X' 
 END AS "중성화 여부" 
 FROM ANIMAL_INS
 ```
@@ -172,9 +171,19 @@ FROM ANIMAL_INS
 > ![image-20220427222330749](SQL LEVEL 2.assets/image-20220427222330749.png)
 
 ```mysql
+SELECT COUNT(DISTINCT NAME) FROM ANIMAL_INS WHERE NAME IS NOT NULL
 ```
 
+동물의 이름이 몇개인지 구해야 합니다. 따라서 중복을 제거하거나 그룹으로 묶는 방식이 있을것입니다.
 
+또한 이름이 NULL인 경우는 제외해야 하므로 NULL이 아닌경우를 추가해야 합니다.
+
+
+MYSQL에서는 DISTINCT라는 명령어를 사용하면 중복을 제거됩니다.
+
+여기에 저번 문제에서 사용했던 COUNT를 이용하여 체크를 합니다.
+
+추가로 조건문에서 NAME이 NULL이 아닌것만 뽑아냅니다.
 
 
 
@@ -185,10 +194,14 @@ FROM ANIMAL_INS
 > ![image-20220427222532530](SQL LEVEL 2.assets/image-20220427222532530.png)
 
 ``` mysql
-
+SELECT ANIMAL_ID, NAME, DATE_FORMAT(DATETIME, '%Y-%m-%d') as 날짜
+FROM ANIMAL_INS
+ORDER BY ANIMAL_ID
 ```
 
+https://devjhs.tistory.com/87?category=708166
 
+![image-20220427224728011](SQL LEVEL 2.assets/image-20220427224728011.png)
 
 ----
 
@@ -219,6 +232,12 @@ ORDER BY HOUR(DATETIME)
 시간대 별로 구분을 해야하기 때문에 HOUR를 이용해야합니다.
 
 HOUR에 DATETIME을 넣어주면 시간만 뽑아줍니다.
+*** 날짜 데이터에서 일부만을 추출하기**
 
-
+- YEAR : 연도 
+- MONTH : 월 
+- DAY : 일 (DAYOFMONTH와 같은 함수)
+- HOUR : 시 
+- MINUTE : 분 
+- SECOND : 초 
 
