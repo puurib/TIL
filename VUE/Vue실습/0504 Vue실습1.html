@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <div id="app">
+    <button v-on:click="myFunc">a</button>
+    <button @click="yourFunc">b</button>
+  </div>
+  <!--cdn 먼저 넣기-->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    const vm = new Vue({
+      // el로 매핑
+      el: "#app",
+      // vue 모델에 쓸 데이터 작성
+      data: {
+        a : 1,
+      },
+      methods: {
+        myFunc() {
+          console.log(this) // Vue instance
+        },
+        yourFunc: () => {
+          console.log(this) // window 
+        }
+      }
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% block script %}
+<script>
+  // form, csrftoken
+  const form = document.querySelector('#follow-form')
+  const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value
+
+  // form에 event 처리
+  form.addEventListener('submit', (event)=>{
+    event.preventDefault()
+    const userId = event.target.dataset.userId
+  // axois
+  axios({
+    method: 'post',
+    url: `http://127.0.0.1:8000/accounts/${userId}/follow/`,
+    headers: {'X-CSRFToken' : csrftoken}
+  })
+  // then
+    .then(response => {
+      //console.log(response)
+      const followed = response.data.followed
+      const followButton = document.querySelector(`#followBtn-${userId}`)
+      if (followed) {
+        followButton.innerText = '언팔로우'
+      }
+      else {
+        followButton.innerText = '팔로우'
+      }
+      const followersCount = response.data.followers_count
+      const followingsCount = response.data.followings_count
+      const friendsP = document.querySelector('.friends')
+      friendsP.innerText = `팔로잉 : ${followingsCount} / 팔로워 : ${followersCount}`
+    })
+
+  })
+  
+</script>
+{% endblock script %}
+
+
+{% block script %}
+<script>
+  // form, csrftoken
+  const forms = document.querySelectorAll('.like-form')
+  const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value
+
+  forms.forEach(form => {
+    form.addEventListener('submit', (event)=>{
+      event.preventDefault()
+      //console.log(event)
+      const reviewId = event.target.dataset.reviewId
+      
+      axios ({
+        method : 'post',
+        url : `http://127.0.0.1:8000/community/${reviewId}/like/`,
+        headers : { 'X-CSRFToken' : csrftoken},
+      })
+      .then(response => {
+        //console.log(response)
+        const liked = response.data.liked
+        const likeBtn = document.querySelector(`#like-${reviewId}`)
+        if (liked) {
+          likeBtn.innerText = '좋아요 취소'
+        }
+        else {
+          likeBtn.innerText = '좋아요'
+        }
+        const count = response.data.count
+        const likeCount = document.querySelector(`#likecount-${reviewId}`)
+        likeCount.innerText = `${count} 명이 이 글을 좋아합니다.`
+      })
+    })
+    
+  })
+</script>
+{% endblock script %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

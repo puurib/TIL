@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!--div#app치고 tab -->
+  <div id="app"></div>
+  <div id="app2"></div>
+  <div id="vueapp"></div>
+
+  <script>
+    // [1] 잡고, 넣기 (기존 바닐라JS방식)
+    const myDiv = document.querySelector('#app')
+    const myStr = 'hello world!'
+    myDiv.innerHTML = myStr
+
+    // [2] 내용 수정 (기존 바닐라JS방식)
+    const myDiv2 = document.querySelector('#app2')
+    let myStr2 = 'hello world!'
+    myDiv2.innerHTML = myStr2
+    myStr2 = 'hello new world!'
+    myDiv2.innerHTML = myStr2
+
+    // [3] vue 방식
+    const myDiv3 = document.querySelector('#vueapp')
+    myDiv3.innerHTML = 'vue world!'
+
+    let viewModel = {};
+
+    (function() {
+      function init() {
+        Object 
+      }
+    })
+  </script>
+</body>
+</html>

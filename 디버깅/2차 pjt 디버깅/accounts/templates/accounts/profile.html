@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>{{ person.username }}의 프로필 페이지</h1>
+  {% with followings=person.followings.all followers=person.followers.all %}
+    <div>
+      <div>
+        <p class='friends'>
+          팔로잉 : {{ followings|length }} / 팔로워 : {{ followers|length }}
+        </p>
+      </div>
+      {% if request.user != person %}
+        <div>
+          {% comment %} <form action="{% url 'accounts:follow' person.pk %}" method="POST"> {% endcomment %}
+          <form id='follow-form' data-user-id="{{person.pk}}">
+            {% csrf_token %}
+            {% if request.user in followers %}
+              <button class="follow-{{person.pk}}">언팔로우</button>
+            {% else %}
+              <button class="follow-{{person.pk}}">팔로우</button>
+            {% endif %}
+          </form>
+        </div>
+      {% endif %}
+    </div>
+  {% endwith %}
+{% endblock %}
+
+
+{% block script %}
+<script>
+  
+  // form, csrftoken 정의
+  const form = document.querySelector('#follow-form')
+  const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value
+
+  
+  form.addEventListener('submit', (event) => {
+    event.preventDefault()
+    const userId = event.target.dataset.userId
+
+    axios({
+      method :'post',
+      url: `http://127.0.0.1:8000/accounts/${userId}/follow/`,
+      headers: {'X-CSRFToken': csrftoken}
+    })
+      .then( (response) => {
+        console.log(response)
+        const followed = response.data.followed
+        const followButton = document.querySelector(`.follow-${userId}`)
+
+        if (followed) {
+          followButton.innerText = '언팔로우'
+        }
+        else {
+          followButton.innerText = '팔로우'
+        }
+        const friendsP = document.querySelector('.friends')
+        const followingsCount = response.data.following_count
+        const followersCount = response.data.followers_count
+        friendsP.innerText = `팔로잉 : ${followingsCount} / 팔로워 수 : ${followersCount}`
+      })
+  })
+</script>
+{% endblock script %}
