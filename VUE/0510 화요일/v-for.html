@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <ul>
+      <!--유사 배열이라 배열 인덱싱이 가능하다 -->
+      <li>{{fruits[0]}}</li>
+      <li v-for="(fruit, idx) in fruits">
+        {{idx}} - {{fruit}}
+      </li>
+    </ul>
+    <h3>todo</h3>
+    <ul>
+      <li v-for="todo in todos" :key="`todo-id-${todo.id}`">{{todo.context}}</li>
+      <!---->
+      <h5>false인 것 만 출력되는데 이렇게 사용 노노</h5>
+      <li v-for="todo in todos" v-if="!todo.completed">{{todo.context}}</li>
+      <h5>아래처럼 써야함</h5>
+      <template v-for="todo in todos">
+        <li v-if="!todo.completed">{{todo.context}}</li>
+      </template>
+    </ul>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        fruits : ['apple', 'banana', 'coconut'],
+        // 리스트 안에 각각에 객체가 들어가게 작성(todo)
+        todos : [
+          {id: 1, context: 'todo1', completed:false},
+          {id: 2, context: 'todo2', completed:true},
+          {id: 3, context: 'todo3', completed:false},
+        ]
+      },
+    })
+  </script>
+</body>
+</html>

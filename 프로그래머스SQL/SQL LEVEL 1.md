@@ -22,7 +22,7 @@ SELECT MAX(DATETIME) FROM ANIMAL_INS
 
 > 이름이 없는 동물의 아이디
 
-* NULL 값 찾을 때는 `is NULL`
+* NULL 값 찾을 때는 `IS NULL`
 
 ``` mysql
 SELECT ANIMAL_ID 

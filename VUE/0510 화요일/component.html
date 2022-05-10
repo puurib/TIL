@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <my-header></my-header>  <!-- [2] 전역 컴포넌트 배치 -->
+    <my-content></my-content> <!-- [2] 전역 컴포넌트 배치 -->
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    // 전역 컴포넌트 만들기
+    // Vue.component('컴포넌트명', {컴포넌트 내용})
+    Vue.component('my-header', {
+      template: '<h2>App Header</h2>'  // [1] 전역 컴포넌트 등록
+    })
+    Vue.component('my-content', {
+      template: '<p>App content</p>'  // [1] 전역 컴포넌트 등록
+    })
+    new Vue({
+      el: '#app',
+    })
+  </script>
+</body>
+</html>

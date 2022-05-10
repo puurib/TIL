@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <!--이벤트 트리거 -->
+    <my-header @here="numberEvent"></my-header>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    // 전역 컴포넌트 만들기
+    // Vue.component('컴포넌트명', {컴포넌트 내용})
+    const myHeader = {          // [2] 컴포넌트 등록 
+      template: '<button @click="myEvent">click me</button>',
+      methods:{
+        myEvent(){
+          //this.$emit('이벤트 이름', '파라미터')
+          this.$emit('here', 10)
+        }
+      }
+    }
+    new Vue({
+      el: '#app',
+      
+      components: {
+        'my-header': myHeader,
+      },
+      methods: {
+        numberEvent(value) {
+          console.log(value)
+        }
+      }
+    })
+  </script>
+</body>
+</html>
