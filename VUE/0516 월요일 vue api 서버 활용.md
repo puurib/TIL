@@ -175,3 +175,5 @@ $ python manage.py createsuperuser
 
 
 [3] `articles > serializers > article.py`
+
+ㅇ
