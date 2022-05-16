@@ -36,9 +36,20 @@ INSTALLED_APPS = [
     'articles',
     # 3rd party apps
     'django_extensions',
-    'rest_framework',
+    'corsheaders',
 
+    # rest_framework
+    'rest_framework',
+    'rest_framework.authtoken',
+    'dj_rest_auth',
+    'dj_rest_auth.registration',
+
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    
     # django native apps
+    'django.contrib.sites',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -47,7 +58,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
+SITE_ID = 1
+
+# 미들웨어의 위치가 중요
 MIDDLEWARE = [
+    # 적어도 CommonMiddleware위에 두고, 최상단에 두는 게 좋음
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -58,6 +74,20 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'django_back.urls'
+
+# DRF 설정
+REST_FRAMEWORK = {
+    # 기본 인증을 TokenAuthentication을 사용하도록 설정함
+    'DEFAULT_AUTHENTICATION_CLASSES' : [
+        'rest_framwork.authentication.TokenAuthentication'
+    ],
+    # 인증받은 사용자만 요청하도록 설정하는 곳
+    'DEFAULT_PERMISSIONS_CLASSES' : [
+        'rest_framwork.permissions.AllowAny',  # 예를 들어 회원가입때는 누구나 접근
+        'rest_framwork.permissions.IsAuthenticated', #로그만 하면 허용
+    ],
+}
+
 
 TEMPLATES = [
     {
@@ -133,3 +163,14 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'accounts.user'
+
+
+# 특정 origin에게만 교차 출처 허용
+# CORS_ALLOWED_ORIGINS = [
+#     # Vue LocalHost
+#     'http://localhost:8080',
+# ]
+
+
+# 모두에게 교차출처 허용
+CORS_ALLOWED_ORIGINS = True
