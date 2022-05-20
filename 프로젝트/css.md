@@ -58,7 +58,7 @@ flex-direction 정렬방향 : row, row-reverse, column, column-reverse
 
 ![image-20220524180246576](css.assets/image-20220524180246576.png)부트스트랩 뷰 2.22.0
 
-부트스트랩 4.6.1ㅇㅇㅇ
+부트스트랩 4.6.1ㅇㅇㅇㅇ
 
 ``` css
 # 마우스 올렸을 때 색깔 바꾸기
